@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require('dbconn.php');
 ?>
 
@@ -74,46 +74,45 @@ if ($_SESSION['RollNo']) {
                     <!--/.span3-->
                     
                     <div class="span9">
-                        <center>
-                            <div class="card" style="width: 50%;"> 
-                                <img class="card-img-top" src="images/profile2.png" alt="Card image cap">
-                                <div class="card-body">
+                        <div class="content">
 
-                                <?php
-                                $rollno = $_SESSION['RollNo'];
-                                $sql="select * from LMS.user where RollNo='$rollno'";
-                                $result=$conn->query($sql);
-                                $row=$result->fetch_assoc();
-
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Student Details</h3>
+                            </div>
+                            <div class="module-body">
+                        <?php
+                            $rno=$_GET['id'];
+                            $sql="select * from LMS.user where RollNo='$rno'";
+                            $result=$conn->query($sql);
+                            $row=$result->fetch_assoc();    
+                            
                                 $name=$row['Name'];
                                 $category=$row['Category'];
                                 $email=$row['EmailId'];
                                 $mobno=$row['MobNo'];
-                                ?>    
-                                    <i>
-                                    <h1 class="card-title"><center><?php echo $name ?></center></h1>
-                                    <br>
-                                    <p><b>Email ID: </b><?php echo $email ?></p>
-                                    <br>
-                                    <p><b>Mobile number: </b><?php echo $mobno ?></p>
-                                    </b>
-                                </i>
 
-                                </div>
-                            </div>
-                        <br>
-                        <a href="edit_admin_details.php" class="btn btn-primary">Edit Details</a>
-                        </center>               
+
+                                echo "<b><u>Name:</u></b> ".$name."<br><br>";
+                                echo "<b><u>Category:</u></b> ".$category."<br><br>";
+                                echo "<b><u>Roll No:</u></b> ".$rno."<br><br>";
+                                echo "<b><u>Email Id:</u></b> ".$email."<br><br>";
+                                echo "<b><u>Mobile No:</u></b> ".$mobno."<br><br>"; 
+                            ?>
+                            
+                        <a href="student.php" class="btn btn-primary">Go Back</a>                             
+                               </div>
+                           </div>
+                        </div>
                     </div>
-                    
                     <!--/.span9-->
+
                 </div>
             </div>
             <!--/.container-->
         </div>
 <div class="footer">
             <div class="container">
-                <b class="copyright">&copy; 2018 Library Management System </b>All rights reserved.
             </div>
         </div>
         

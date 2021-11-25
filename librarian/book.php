@@ -129,6 +129,9 @@ if ($_SESSION['RollNo']) {
                                         <td><center>
                                             <a href="bookdetails.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Details</a>
                                             <a href="edit_book_details.php?id=<?php echo $bookid; ?>" class="btn btn-success">Edit</a>
+                                            <a href="delete_book_details.php?id=<?php echo $bookid; ?>"class="btn btn-danger">Delete</button></a>
+                                            <a href="edit_book_details.php?id=<?php echo $bookid; ?>"class="btn">Lend</button></a>
+                                         
                                         </center></td>
                                     </tr>
                                <?php }} ?>
@@ -155,6 +158,8 @@ if ($_SESSION['RollNo']) {
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
       
+
+
     </body>
 
 </html>

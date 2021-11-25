@@ -104,7 +104,7 @@ if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
    
 
   if($y=='Admin')
-   header('location:admin/index.php');
+   header('location:librarian/index.php');
   else
   	header('location:student/index.php');
         
